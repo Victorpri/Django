@@ -54,7 +54,7 @@ ROOT_URLCONF = 'primerProyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/Aprendiz/Desktop/Django/eje1/primerProyecto/plantillas'],    #aca le indicamos que desde esta direccion vendran todas las platillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

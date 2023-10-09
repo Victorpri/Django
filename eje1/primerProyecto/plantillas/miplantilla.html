@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pruebas de Django</h1>
+
+    {% if nombre_persona == 'Jose Arturo' %}
+        <p>El curso lo imprate el profesor</p>
+        
+    {% else %}
+        <p>Esta mal escrito desgraciado</p>
+
+    {% endif %}
+
+    <p>mi nombre es: {{nombre_persona}} y mi apellido es: {{apellido_persona}} </p>
+    <p>actualmente lel dia es: {{momento_actual.day}}</p>
+    <p>actualmente lel dia es: {{momento_actual.day}} / {{momento_actual.month}}</p>    <!--aca para invocar a dos se debe colovar el "/" y despue se vuelve a invovar normalmente-->
+    <p>actualmente lel dia es: {{momento_actual}}</p>
+
+    <p><strong>Temas del curso:</strong></p>
+
+    <p>
+        <ul>
+        {% for elTema in temas %}
+            <li>{{elTema}}</li>                 <!--Pra imprimir todo en lista se hace con un for el cual se debe cerrar y abrir con "for" y cin "endfor" ahora para hacerlo uno debajo de-->
+        {% endfor %}                            <!--otro lo que hacemos es colocarlo entre un "ul" y un "li" aunque se puede hacer de otras maneras-->
+        </ul>
+    </p>
+
+    <p>
+        {% for elTema in temas %}
+            <p>{{elTema}}</p>                   <!--Pra imprimir todo en lista se hace con un for el cual se debe cerrar y abrir con "for" y cin "endfor" ahora para hacerlo uno debajo de-->
+        {% endfor %}                            <!--otro lo que hacemos colocarlo entre un parrafo con "p", si lo hacemos sin esto nos traera el resultado uno adelante del otro lo que es poco organizado-->
+    </p>
+
+
+    <p>
+        <ul>
+        {% if Vacio %}                          <!--Para hacer uno se los condicionales se invoca primero con su respectivo cierre "endif" y colocamos el Vacio para que verifique que existe-->
+            {% for elVacio in Vacio %}
+                <li>{{elVacio}}</li>                 
+            {% endfor %} 
+        {% else %}                              <!--Al no existir hacemos que nos mande el mensaje de "no hay elementos que mostrar"-->
+            <p>no hay elemtos que monstrar</p>
+        {% endif %}                           
+        </ul>
+    </p>
+
+
+    <p>{{temas}}</p>                <!--si queremos invocar una clave se invoca de esta manera-->
+    <p>{{temas.1}}</p>              <!--pero si esa clave es una lista se debe especificar que parte de la lista con "." ".0   .1   .2   .3  etc.."-->
+
+
+    
+<!--PARA LOS FILTROS PRACTICA ACA ABAJO, DEBES MIRAR LA DOCUMENTACION DE DJANGO-->
+
+
+
+</body>
+</html>
+
