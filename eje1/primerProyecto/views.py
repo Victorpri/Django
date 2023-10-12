@@ -72,12 +72,8 @@ def saludoDos(request):  #primera  vista
     return HttpResponse(documento)
 
 
-
-
 def despedida(request):
     return HttpResponse("adios mundo")
-
-
 
 def dameFecha(request):
     fecha_actual=datetime.datetime.now()
@@ -91,8 +87,6 @@ def dameFecha(request):
     </html>""" % fecha_actual
     
     return HttpResponse(documento)
-
-
 
 def calculaEdad(request,edad, age):
     
